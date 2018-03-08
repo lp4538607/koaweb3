@@ -1,0 +1,12 @@
+   webpack将所有静态资源都视为模块，比如JavaScript、css、less、JSX、CoffeeScript、图片等，从而可以对其进行统一管理。为此，webpack引入了加载器(loaders)的概念，每一种资源都可以通过对应的加载器处理成模块。和大多数包管理器不一样的是 webpack的加载器之间可以进行串联，一个加载器的输出可以成为另一个加载器的输入。比如，LESS文件先通过less-loader处理成CSS，然后在通过css-loader加载成CSS模块，最后由style-loader加载器对其做最后的处理，这样在运行时可以通过style标签将其应用到最终的浏览器环境。
+
+   为了让webpack识别资源应该用哪种加载器去载入，需要在配置文件中进行配置，即在module.loaders的test属性下编写正则表达式，通过正则表达式对文件名进行配置，匹配成功则使用该加载器进行处理。
+
+   webpack就是个配置文件，告诉加载器，模块应该如何加载，应该如何打包，他的所有魔力都是在这一个文件中发生的，也就是像这种webpack.config.js文件，这个配置文件主要分为3大块：
+   1.entry: 入口文件，让webpack用哪个文件作为项目的入口:
+   2.output: 出口，让webpack把处理完成的文件放在哪里;
+   3.mudule模块:  要用什么不同的模块来处理各种类型的文件
+
+   http://www.cnblogs.com/YikaJ/p/4586703.html
+   https://www.cnblogs.com/sloong/p/5826818.html
+   
